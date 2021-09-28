@@ -30,7 +30,13 @@
                             <outlet property="delegate" destination="87O-8K-xpA" id="HlS-2m-VPU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Star Wars Characters" id="LeI-ua-qwK"/>
+                    <navigationItem key="navigationItem" title="Star Wars Characters" id="LeI-ua-qwK">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="ird-vk-pEG">
+                            <connections>
+                                <action selector="refreshTapped:" destination="87O-8K-xpA" id="fYv-ex-Kxq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cqB-BL-alQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

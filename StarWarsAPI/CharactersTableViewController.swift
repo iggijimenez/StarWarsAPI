@@ -17,6 +17,11 @@ class CharactersTableViewController: UITableViewController {
         getPeople()
     }
     
+    @IBAction func refreshTapped(_ sender: Any) {
+        getPeople2()
+    }
+    
+    //MARK: Parsing Data
     func parse(json: Data) {
         let decoder = JSONDecoder()
 
@@ -35,27 +40,23 @@ class CharactersTableViewController: UITableViewController {
         if let url = URL(string: urlString) {
             if let data = try? Data(contentsOf: url) {
                 parse(json: data)
-//                print(String(data: data, encoding: .utf8))
             }
         }
     }
     
-    //        if let url = URL(string: urlString) {
-    //            var request = URLRequest(url: url)
-    //            request.httpMethod = "GET"
-    //            URLSession.shared.dataTask(with: request) {(data, response, error) in
-    //
-    //                if error != nil {
-    //                    print("There is an error")
-    //                } else if data != nil {
-    //                    print(String(data: data!, encoding: .utf8))
-    ////                    if let characterFromAPI = try? JSONDecoder().decode([Character].self, from: data!) {
-    ////                        print(characterFromAPI)
-    ////                    }
-    //                }
-    //            }.resume()
-    //        }
-    //    }
+    func getPeople2() {
+        //https://swapi.dev/api/people/
+        //https://pokedex-bb36f.firebaseio.com/pokemon.json
+        
+        let urlString = "https://swapi.dev/api/people/?page=2"
+        
+        if let url = URL(string: urlString) {
+            if let data = try? Data(contentsOf: url) {
+                parse(json: data)
+            }
+        }
+    }
+
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -72,6 +73,8 @@ class CharactersTableViewController: UITableViewController {
         return cell
     }
 }
+
+
 
 extension Data {
     func parseData(removeString string: String) -> Data? {
