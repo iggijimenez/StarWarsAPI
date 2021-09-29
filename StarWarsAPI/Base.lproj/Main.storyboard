@@ -16,13 +16,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="personCell" id="B99-h7-ohr">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="personCell" rowHeight="286" id="B99-h7-ohr" customClass="PersonTableViewCell" customModule="StarWarsAPI" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="286"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B99-h7-ohr" id="4ct-VS-vOS">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="286"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="face" translatesAutoresizingMaskIntoConstraints="NO" id="HWZ-0f-6La">
+                                            <rect key="frame" x="15" y="0.0" width="123" height="286"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="123" id="HqY-MV-35f"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anakin Skywalker" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJ3-Wv-wU3">
+                                            <rect key="frame" x="158" y="11" width="176" height="264"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="HWZ-0f-6La" firstAttribute="leading" secondItem="4ct-VS-vOS" secondAttribute="leading" constant="15" id="1Uu-aS-rzW"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="QJ3-Wv-wU3" secondAttribute="bottom" id="F30-I1-lg8"/>
+                                        <constraint firstItem="QJ3-Wv-wU3" firstAttribute="leading" secondItem="HWZ-0f-6La" secondAttribute="trailing" constant="20" id="Ldd-eu-vfz"/>
+                                        <constraint firstAttribute="bottom" secondItem="HWZ-0f-6La" secondAttribute="bottom" id="isY-fS-eSp"/>
+                                        <constraint firstItem="HWZ-0f-6La" firstAttribute="top" secondItem="4ct-VS-vOS" secondAttribute="top" id="rwA-sB-pTJ"/>
+                                        <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="QJ3-Wv-wU3" secondAttribute="trailing" constant="60" id="s8w-Qc-Srx"/>
+                                        <constraint firstItem="QJ3-Wv-wU3" firstAttribute="top" secondItem="4ct-VS-vOS" secondAttribute="topMargin" id="x2x-7A-QEW"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="QJ3-Wv-wU3" id="m3G-pk-2HJ"/>
+                                    <outlet property="personImage" destination="HWZ-0f-6La" id="sEA-5K-AvS"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -62,6 +89,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="face" width="53" height="61"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

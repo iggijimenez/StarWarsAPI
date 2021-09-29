@@ -10,6 +10,7 @@ import UIKit
 class CharactersTableViewController: UITableViewController {
     //    @Published var pokemon = [Pokemon]()
     var characters = [Character]()
+    var page = 2
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +49,12 @@ class CharactersTableViewController: UITableViewController {
         //https://swapi.dev/api/people/
         //https://pokedex-bb36f.firebaseio.com/pokemon.json
         
-        let urlString = "https://swapi.dev/api/people/?page=2"
+        let urlString = "https://swapi.dev/api/people/?page=" + String(page)
+        if page < 8 {
+            page += 1
+        } else {
+            page = 1
+        }
         
         if let url = URL(string: urlString) {
             if let data = try? Data(contentsOf: url) {
@@ -64,13 +70,15 @@ class CharactersTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath)
-        
-        // Configure the cell...
-        
-        let character = characters[indexPath.row]
-        cell.textLabel?.text = character.name
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as? PersonTableViewCell {
+            
+            let character = characters[indexPath.row]
+            
+            cell.nameLabel.text = character.name
+//            cell.personImage
+            return cell
+        }
+        return UITableViewCell()
     }
 }
 

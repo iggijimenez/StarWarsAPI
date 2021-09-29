@@ -15,6 +15,7 @@
 		A417A949270240CE00A0522F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A417A947270240CE00A0522F /* LaunchScreen.storyboard */; };
 		A417A9512702431C00A0522F /* CharactersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A417A9502702431C00A0522F /* CharactersTableViewController.swift */; };
 		A417A9532702494100A0522F /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = A417A9522702494100A0522F /* Character.swift */; };
+		A41AC46E2703E11500AFFC61 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41AC46D2703E11500AFFC61 /* PersonTableViewCell.swift */; };
 		A441D8A62702C2D200E47241 /* Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A441D8A52702C2D200E47241 /* Characters.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		A417A94A270240CE00A0522F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A417A9502702431C00A0522F /* CharactersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersTableViewController.swift; sourceTree = "<group>"; };
 		A417A9522702494100A0522F /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		A41AC46D2703E11500AFFC61 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		A441D8A52702C2D200E47241 /* Characters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Characters.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +71,7 @@
 				A417A9522702494100A0522F /* Character.swift */,
 				A441D8A52702C2D200E47241 /* Characters.swift */,
 				A417A942270240CB00A0522F /* Main.storyboard */,
+				A41AC46D2703E11500AFFC61 /* PersonTableViewCell.swift */,
 				A417A945270240CE00A0522F /* Assets.xcassets */,
 				A417A947270240CE00A0522F /* LaunchScreen.storyboard */,
 				A417A94A270240CE00A0522F /* Info.plist */,
@@ -152,6 +155,7 @@
 				A417A9512702431C00A0522F /* CharactersTableViewController.swift in Sources */,
 				A417A9532702494100A0522F /* Character.swift in Sources */,
 				A417A93D270240CB00A0522F /* AppDelegate.swift in Sources */,
+				A41AC46E2703E11500AFFC61 /* PersonTableViewCell.swift in Sources */,
 				A417A93F270240CB00A0522F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
